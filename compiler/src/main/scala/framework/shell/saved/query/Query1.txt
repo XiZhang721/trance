@@ -1,0 +1,4 @@
+\QUERY Query1
+    for o in Order union
+      {(date := o.o_orderdate, key := o.o_orderkey)}
+      

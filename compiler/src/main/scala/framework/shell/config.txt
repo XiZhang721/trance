@@ -1,0 +1,2 @@
+sbt_path = C:\Program Files (x86)\sbt\bin\sbt
+spark_path = D:\Spark\spark-3.3.2\bin\spark-submit

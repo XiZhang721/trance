@@ -1,0 +1,9 @@
+\PROGRAM Program1
+\QUERY Query1
+    for o in Order union
+      {(date := o.o_orderdate, ok := o.o_orderkey)}
+      
+\QUERY Query4
+    for o in Query1 union
+      {(date := o.date)}
+      

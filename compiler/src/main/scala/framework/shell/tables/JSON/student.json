@@ -1,0 +1,15 @@
+[ {
+  "s_name" : "Alice",
+  "s_studentnumber" : 12345,
+  "s_contact" : {
+    "c_mobile" : 123456789,
+    "c_email" : "alice123@email.com"
+  }
+}, {
+  "s_name" : "Bob",
+  "s_studentnumber" : 54321,
+  "s_contact" : {
+    "c_mobile" : 987654321,
+    "c_email" : "bob123@email.com"
+  }
+}]

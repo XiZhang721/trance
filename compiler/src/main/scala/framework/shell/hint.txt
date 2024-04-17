@@ -1,0 +1,72 @@
+The valid commands for the TraNCE Command Line Interface:
+1. Write NRC Query
+    Options:
+        1. [query_name] := [query_content] ;
+            Description: Creates a NRC query with the given query name and query content, allows inputting multiple lines.
+        2. \query -editor
+            Description: This will open an external editor for writing the query.
+            Format for writing in the external editor: [query_name] := [query_content]
+2. Make NRC Program
+    Option:
+        1. \program [program_name] := [query_name]*
+            Description: Creates a NRC program with the specified name and queries, note that the queries has to be created before making the program.
+3. Load Query/Program/Table
+    Options:
+        1. \load -table [file_name]
+            Description: This loads a json table from the \tables\JSON\ folder for evaluation.
+        2. \load -query [file_name]
+            Description: This loads a query from the \saved\query\ folder.
+        3. \load -program [file_name]
+            Description: This loads a program from the \saved\program\ folder.
+4. Evaluate Query/Program
+    Options:
+        1. \evaluate [query_name]
+            Description: This evaluates the specified query and shows the execution result, and saved the result for future evaluation.
+        2. \evaluate [query_name] to [file_name]
+            Description: This does the same behavior as the previous option, but also saving the evaluation results into a local json file.
+        3. \evaluate -program [program_name]
+            Description: This evaluates the specified program, prints the evaluation results for each query and save them for future evaluation.
+5. Save Query/Program
+    Options:
+        1. \save -query [query_name]
+            Description: This saves the specified query to local under \saved\query\ folder.
+        2. \save -program [program_name]
+            Description: This saves the specified program to local under \saved\program\ folder.
+6. Show Query/Program
+    Options:
+        1. \show
+            Description: This shows the name of written queries and programs.
+        2. \show -query [query_name]
+            Description: This shows the expression for the specified query.
+        3. \show -program [program_name]
+            Description: This shows the name of queries within the specified program.
+        4. \show -generated
+            Description: This shows the name of generated Spark applications.
+7. Rename Query
+    Option:
+        1. \rename [query_name] to [new_name]
+            Description: This renames a query, note that any program using this query will need to be rebuild.
+8. Spark Generation
+    Options:
+        1. \generate -standard [query_name]
+            Description: This generates the Spark program for the specified NRC query using the standard pipeline.
+        2. \generate -shredded [query_name]
+            Description: This generates the Spark program for the specified NRC query using the shredded pipeline.
+        3. \generate -standard -program [program_name]
+            Description: This generates the Spark program for the specified NRC program using the standard pipeline.
+        4. \generate -shredded -program [program_name]
+            Description: This generates the Spark program for the specified NRC program using the shredded pipeline.
+        5. \generate -intermediate on/off
+            Description: Turn on or turn off the intermediate state printing for Spark program generation.
+9. Spark Execution
+    Option:
+        1. \execute [application_name]
+            Description: Execute the specified Spark application.
+        2. \execute -save [application_name]
+            Description: Execute the specified Spark application and save the result to local as text file.
+10. Exit
+    Option:
+        1. \exit
+            Description: Exits the Command Line Interface.
+
+

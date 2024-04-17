@@ -1,0 +1,29 @@
+ [ {
+  "orderKey" : 1,
+  "custKey" : 1,
+  "details" : [ {
+    "date" : "1996-01-02",
+    "price" : 124828.11
+  } ]
+}, {
+  "orderKey" : 1,
+  "custKey" : 2,
+  "details" : [ {
+    "date" : "1996-01-02",
+    "price" : 124828.11
+  } ]
+}, {
+  "orderKey" : 2,
+  "custKey" : 2,
+  "details" : [ {
+    "date" : "1996-02-02",
+    "price" : 124828.11
+  } ]
+}, {
+  "orderKey" : 3,
+  "custKey" : 4,
+  "details" : [ {
+    "date" : "1996-03-02",
+    "price" : 124828.11
+  } ]
+} ] 

@@ -38,9 +38,23 @@ trait Query extends Materialization
     translate(program)
   }
 
+  def calculusI: CExpr = {
+    println("RUNNING STANDARD PIPELINE:\n")
+    println(quote(program))
+    val result = translate(program)
+    println("\nCALCULUS CEXPR: \n" + Printer.quote(result))
+    result
+  }
+
   def normalize: CExpr = normalizer.finalize(this.calculus).asInstanceOf[CExpr]
-  
+  def normalizeI: CExpr = {
+    val result = normalizer.finalize(this.calculusI).asInstanceOf[CExpr]
+    println("\nAFTER NORMALIZATION: \n" + Printer.quote(result))
+    result
+  }
+
   def unnest: CExpr = Unnester.unnest(this.normalize)(Map(), Map(), None, baseTag)
+  def unnestI:CExpr = Unnester.unnest(this.normalizeI)(Map(), Map(), None, baseTag)
 
   def anf(optimizationLevel: Int = 2, schema: Schema = Schema()): CExpr = {
     val anfBase = new BaseOperatorANF{}
@@ -50,7 +64,22 @@ trait Query extends Materialization
     optimizationLevel match {
       case 0 => anfBase.anf(anfer.finalize(un).asInstanceOf[anfBase.Rep])
       case 1 => anfBase.anf(anfer.finalize(optimizer.applyPush(un)).asInstanceOf[anfBase.Rep])
-      case _ => 
+      case _ =>
+        val fp = optimizer.applyAll(un)
+        anfBase.anf(anfer.finalize(fp).asInstanceOf[anfBase.Rep])
+    }
+  }
+
+  def anfI(optimizationLevel: Int = 2, schema: Schema = Schema()): CExpr = {
+    val anfBase = new BaseOperatorANF{}
+    val anfer = new Finalizer(anfBase)
+    val un = this.unnestI
+    println("\nAFTER UNNESTING: \n" + Printer.quote(un))
+    val optimizer = Optimizer(schema)
+    optimizationLevel match {
+      case 0 => anfBase.anf(anfer.finalize(un).asInstanceOf[anfBase.Rep])
+      case 1 => anfBase.anf(anfer.finalize(optimizer.applyPush(un)).asInstanceOf[anfBase.Rep])
+      case _ =>
         val fp = optimizer.applyAll(un)
         anfBase.anf(anfer.finalize(fp).asInstanceOf[anfBase.Rep])
     }
@@ -159,7 +188,9 @@ trait Query extends Materialization
     println(matProg)
 
     val bcalc = translate(matProg)
+    println("\nCALCULUS CEXPR: \n" + Printer.quote(bcalc))
     val ncalc = normalizer.finalize(bcalc).asInstanceOf[CExpr]
+    println("\nAFTER NORMALIZATION: \n"+Printer.quote(ncalc))
     val initPlan = Unnester.unnest(ncalc)(Map(), Map(), None, baseTag)
 
     val plan = optLevel match {

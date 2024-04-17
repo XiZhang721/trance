@@ -1,0 +1,46 @@
+[ {
+  "c_custkey" : 1,
+  "c_name" : "Customer#000000001",
+  "c_address" : "IVhzIApeRb ot,c,E",
+  "c_nationkey" : 15,
+  "c_phone" : "25-989-741-2988",
+  "c_acctbal" : 711.56,
+  "c_mktsegment" : "BUILDING",
+  "c_comment" : "to the even, regular platelets. regular, ironic epitaphs nag e"
+}, {
+  "c_custkey" : 1,
+  "c_name" : "Customer#000000001",
+  "c_address" : "IVhzIApeRb ot,c,E",
+  "c_nationkey" : 15,
+  "c_phone" : "25-989-741-2988",
+  "c_acctbal" : 711.56,
+  "c_mktsegment" : "BUILDING",
+  "c_comment" : "to the even, regular platelets. regular, ironic epitaphs nag e"
+}, {
+  "c_custkey" : 2,
+  "c_name" : "Customer#000000002",
+  "c_address" : "IVhzIApeRb ot,c,E",
+  "c_nationkey" : 15,
+  "c_phone" : "25-989-741-2988",
+  "c_acctbal" : 711.56,
+  "c_mktsegment" : "BUILDING",
+  "c_comment" : "to the even, regular platelets. regular, ironic epitaphs nag e"
+}, {
+  "c_custkey" : 3,
+  "c_name" : "Customer#000000003",
+  "c_address" : "IVhzIApeRb ot,c,E",
+  "c_nationkey" : 15,
+  "c_phone" : "25-989-741-2988",
+  "c_acctbal" : 711.56,
+  "c_mktsegment" : "BUILDING",
+  "c_comment" : "to the even, regular platelets. regular, ironic epitaphs nag e"
+}, {
+  "c_custkey" : 4,
+  "c_name" : "Customer#000000004",
+  "c_address" : "IVhzIApeRb ot,c,E",
+  "c_nationkey" : 15,
+  "c_phone" : "25-989-741-2988",
+  "c_acctbal" : 711.56,
+  "c_mktsegment" : "BUILDING",
+  "c_comment" : "to the even, regular platelets. regular, ironic epitaphs nag e"
+} ]

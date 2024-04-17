@@ -1,0 +1,41 @@
+[ {
+  "o_orderkey" : 1,
+  "o_custkey" : 1,
+  "o_orderstatus" : "O",
+  "o_totalprice" : 124828.11,
+  "o_orderdate" : "1996-01-02",
+  "o_orderpriority" : "5-LOW",
+  "o_clerk" : "Clerk#000000951",
+  "o_shippriority" : 0,
+  "o_comment" : "nstructions sleep furiously among"
+}, {
+  "o_orderkey" : 1,
+  "o_custkey" : 2,
+  "o_orderstatus" : "O",
+  "o_totalprice" : 124828.11,
+  "o_orderdate" : "1996-01-02",
+  "o_orderpriority" : "5-LOW",
+  "o_clerk" : "Clerk#000000951",
+  "o_shippriority" : 0,
+  "o_comment" : "nstructions sleep furiously among"
+}, {
+  "o_orderkey" : 2,
+  "o_custkey" : 2,
+  "o_orderstatus" : "O",
+  "o_totalprice" : 124828.11,
+  "o_orderdate" : "1996-02-02",
+  "o_orderpriority" : "5-LOW",
+  "o_clerk" : "Clerk#000000951",
+  "o_shippriority" : 0,
+  "o_comment" : "nstructions sleep furiously among"
+}, {
+  "o_orderkey" : 3,
+  "o_custkey" : 4,
+  "o_orderstatus" : "O",
+  "o_totalprice" : 124828.11,
+  "o_orderdate" : "1996-03-02",
+  "o_orderpriority" : "5-LOW",
+  "o_clerk" : "Clerk#000000951",
+  "o_shippriority" : 0,
+  "o_comment" : "nstructions sleep furiously among "
+} ]
