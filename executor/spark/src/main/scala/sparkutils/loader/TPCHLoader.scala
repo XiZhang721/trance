@@ -81,6 +81,21 @@ class TPCHLoader(spark: SparkSession) extends Serializable {
                     PartSupp(l(0).toInt, l(1).toInt, l(2).toInt, l(3).toDouble, l(4))})
   }
 
+    def loadPartSuppDF():Dataset[PartSupp] = {
+    val schema = StructType(Array(
+                      StructField("ps_partkey", IntegerType), 
+                      StructField("ps_suppkey", IntegerType), 
+                      StructField("ps_availqty", IntegerType), 
+                      StructField("ps_supplycost", DoubleType), 
+                      StructField("ps_comment", StringType)))
+
+    val partSuppsdf = spark.read.schema(schema)
+      .option("delimiter", "|")
+      .csv(s"file:///$datapath/partsupp.tbl")
+      .as[PartSupp]
+    partSuppsdf.repartition(parts)
+  }
+
 
   /** Part Loaders **/
 
